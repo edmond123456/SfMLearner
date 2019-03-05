@@ -17,7 +17,7 @@ while ($n <= 16)
   set gpuid=`echo "($n-1) % $gpus" | bc`
   set run=`printf %02d $n`
 
-  set imagedir="/home/junjie_hua/brain_SfMLearner/dataset/formatted_data/*.jpg"
+  set imagedir="/home/junjie_hua/brain_SfMLearner/dataset/formatted_data/Nishida_Vimeo_$indirtags[$n]/im*.jpg"
 
   if ($n < 12) then
     echo ./infer.py "'$imagedir'" $nframes dnn_features_raw/NishidaVimeo_1024x576/NishidaVimeo${run}.zarr --nskip $nskip --gpu $gpuid
